@@ -75,7 +75,7 @@ def compare_sheets(exl_1, exl_2, sheet, diff_writer, diff_annot):
         diff_annot += f"\t\tSheet '{sheet}' does not show any differences.\n"
 
     exl_1[sheet].to_excel(diff_writer, index=False,
-                          header=True, encoding='utf-8',
+                          header=True,
                           sheet_name=sheet)
     return diff_annot, diffs
 
