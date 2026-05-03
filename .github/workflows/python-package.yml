@@ -31,7 +31,6 @@ jobs:
         pip3 install .
     - name: test-run
       run: |
-        pwd
         spreadsheetdiff -v -i ./assets/data/test_table_1.ods ./assets/data/test_table_3.xlsx -o diff
     - name: Lint with flake8
       run: |
