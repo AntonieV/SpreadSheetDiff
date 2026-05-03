@@ -1,0 +1,11 @@
+## COMPARISON OF
+##	assets/data/test_table_3.xlsx
+##	WITH
+##	assets/data/test_table_2.ods
+##
+## Differences:
+	Sheet 'Tabelle2':
+		Sheet 'Tabelle2' does not show any differences.
+	Sheet 'Tabelle1':
+		In sheet 'Tabelle1' [row: 7, col: col_2]: asdf >>> dfghd
+		In sheet 'Tabelle1' [row: 24, col: col_1]: 23 >>> 223

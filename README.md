@@ -7,16 +7,18 @@ number of their sheets must be the same in both files.
 
 ## Download and Installation for Linux:
 
-### Install or upgrade pip:
-````
-sudo apt install python3-pip
-pip3 install --upgrade pip
-````
-[//]: # (&#40;requires pip>=22.2.1&#41;)
+## Download:
 
 Clone the repo or download the latest release in .zip or .tar.gz format.
 
-### Download and extract repository in .tar.gz format: 
+### Clone the repository:
+
+Clone the repository directly from GitHub (requires [git](https://git-scm.com/install/) installation on your system):
+```bash
+git clone https://github.com/AntonieV/SpreadSheetDiff.git
+```
+
+### Alternatively: Download and extract repository in .tar.gz format: 
 
 Check if `wget` is installed:
 ````
@@ -54,11 +56,38 @@ unzip latest.zip
 rm latest.zip
 ````
 
-### Installation:
+## Installation:
+
+Install the packeage with pip or in a conda environment.
+
+### Installation with pip:
+
+If needed install or upgrade pip:
+````
+sudo apt install python3-pip
+pip3 install --upgrade pip
+````
+and install the SpreadSheetDiff python-package:
 ````
 cd SpreadSheetDiff
 pip3 install .
 ````
+
+### Installation in a conda/mamba environment:
+
+Install [mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html) and create a conda
+environment:
+
+```bash
+mamba create -c conda-forge -n ssd pip
+```
+Activate the enviroment and install the python package inside:
+
+```bash
+conda activate ssd
+cd SpreadSheetDiff
+pip install .
+```
 
 ## Compare two Excel/OpenOffice files:
 
@@ -111,9 +140,9 @@ optional arguments:
 ### Examples package execution:
 
 ````
-spreadsheetdiff -v -c '#ff0000' -b -i ../test_table_1.ods ../test_table_3.xlsx -o ../diff
+spreadsheetdiff -v -c '#ff0000' -b -i ./assets/data/test_table_1.ods ./assets/data/test_table_3.xlsx -o test/test_1
 
-spreadsheetdiff -q -c 'yellow' -i ../test_table_3.xlsx ../test_table_4.xlsx -o ../diff
+spreadsheetdiff -q -c 'green' -i ./assets/data/test_table_3.xlsx ./assets/data/test_table_4.xlsx -o test/test_2
 ````
 Example output:
 ````
@@ -128,7 +157,7 @@ Example output:
 ### Example for local execution of the main method:
 
 ````
-python3 spreadsheetdiff/main.py -v -i ../file_3.xlsx ../file_2.ods -o ../diff
+python3 spreadsheetdiff/main.py -v -i assets/data/test_table_3.xlsx assets/data/test_table_2.ods -o test/test_3
 
 ````
 
@@ -138,10 +167,10 @@ python3 spreadsheetdiff/main.py -v -i ../file_3.xlsx ../file_2.ods -o ../diff
 from spreadsheetdiff import main as ssd
 
 style = [("bold", True), ("bg_color", "#ff0000")]
-ssd.compare_excel_files('../file_1.ods', '../file_2.ods', '../diff', style)
+ssd.compare_excel_files('./assets/data/test_table_1.ods', './assets/data/test_table_2.ods', 'test/test_4', style)
 
-style = [("bg_color", "yellow")]
-ssd.compare_excel_files('../file_1.ods', '../file_3.xlsx', '../diff', style)
+style = [("bg_color", "green")]
+ssd.compare_excel_files('./assets/data/test_table_1.ods', './assets/data/test_table_3.xlsx', 'test/test_5', style)
 ````
 
 ## Uninstall package:

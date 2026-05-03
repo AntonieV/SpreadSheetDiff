@@ -87,6 +87,7 @@ def compare_excel_files(excel_1, excel_2, out_dir, style=None):
                  f'\n##\n## Differences:\n'
     exl_1 = pd.read_excel(excel_1, sheet_name=None, dtype=object, converters=None)
     exl_2 = pd.read_excel(excel_2, sheet_name=None, dtype=object, converters=None)
+    Path(out_dir).mkdir(parents=True, exist_ok=True)
     out_path = f'{out_dir}/'
     diffs = {}
     if exl_1.keys() == exl_2.keys():
@@ -102,7 +103,7 @@ def compare_excel_files(excel_1, excel_2, out_dir, style=None):
         if style:
             style_diffs(res_exl_file, diffs, style)
         annot_file = f'{res_exl_file}_annotations.txt'
-        with open(out_path + annot_file, 'w') as f:
+        with open(annot_file, 'w') as f:
             f.write(diff_annot)
 
         logger.info('SpreadSheetDiff analysis finished!')
@@ -119,8 +120,8 @@ def compare_excel_files(excel_1, excel_2, out_dir, style=None):
 
 
 def main():
-    input_files, out_dir, style = command_line_options.parse_command_line_opts()
-    if input_files and os.path.exists(out_dir):
+    input_files, out_dir, style = command_line_options.parse_command_line_opts(logger)
+    if input_files:
         compare_excel_files(input_files[0], input_files[1], out_dir, style)
 
 

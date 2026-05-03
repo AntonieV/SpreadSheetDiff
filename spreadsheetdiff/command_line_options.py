@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 
-def parse_command_line_opts():
+def parse_command_line_opts(logger):
     parser = argparse.ArgumentParser(description="A tool to compare two excel files "
                                                  "with annotation of the differences.")
     parser.add_argument("-i", "--input-files",
@@ -56,10 +56,11 @@ def parse_command_line_opts():
         if input_files and len(input_files) == 2:
             path_1 = Path(input_files[0])
             path_2 = Path(input_files[1])
+            if not path_1.is_file() or not path_2.is_file():
+                logger.error('One or both input files does not exist.')
+                sys.exit(1)
             if not (path_1.is_file() and path_2.is_file()):
                 input_files = None
-        if out_dir and not os.path.exists(out_dir):
-            os.makedirs(out_dir)
         if bold:
             style.append(("bold", True))
         if highlight:

@@ -1,0 +1,13 @@
+## COMPARISON OF
+##	./assets/data/test_table_3.xlsx
+##	WITH
+##	./assets/data/test_table_4.xlsx
+##
+## Differences:
+	Sheet 'Tabelle2':
+		Sheet 'Tabelle2' does not show any differences.
+	Sheet 'Tabelle1':
+		In sheet 'Tabelle1' [row: 6, col: col_2]: ghjgj >>> ghjgjg
+		In sheet 'Tabelle1' [row: 9, col: col_3]: 4 >>> 5
+		In sheet 'Tabelle1' [row: 21, col: col_1]: 20 >>> 11
+		In sheet 'Tabelle1' [row: 21, col: col_2]: jhkl >>> jhklt
