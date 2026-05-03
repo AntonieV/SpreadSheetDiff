@@ -24,7 +24,7 @@ setup(
     url='https://github.com/AntonieV/SpreadSheetDiff',
     license='GPLv3',
     packages=['spreadsheetdiff'],
-    python_requires='>3.12',
+    python_requires='>3.10',
     install_requires=REQUIREMENTS,
     long_description=read('README.md'),
     classifiers=[
