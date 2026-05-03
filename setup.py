@@ -17,14 +17,14 @@ def read(fname):
 
 setup(
     name='SpreadSheetDiff',
-    version='0.1.0',
+    version='v1.2.0',
     author='Antonie Vietor',
     author_email='a.vietor@gmx.net',
     description='A tool to compare two excel files with annotation of the differences.',
     url='https://github.com/AntonieV/SpreadSheetDiff',
     license='GPLv3',
     packages=['spreadsheetdiff'],
-    python_requires='>3.6',
+    python_requires='>3.12',
     install_requires=REQUIREMENTS,
     long_description=read('README.md'),
     classifiers=[
