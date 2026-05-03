@@ -1,3 +1,7 @@
+03-05-2026 SpreadSheetDiff version v1.2.0 released: 
+
+* Updated python and setuptools versions
+
 03-05-2026 SpreadSheetDiff version v1.1.0 released: 
 
 * Updated dependencies, adapted input file handling and outdir creation, added test cases and updated README
