@@ -1,5 +1,5 @@
 argparse>=1.4.0
-pandas>=3.0.2
+pandas>=3.0.3
 numpy>=2.4.4
 XlsxWriter>=3.2.9
 odfpy>=1.4.1
